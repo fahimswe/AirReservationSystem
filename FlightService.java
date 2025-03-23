@@ -13,12 +13,12 @@ public class FlightService {
     }
 
     public boolean removeFlight(String flightNumber) {
-        return flights.removeIf(flight -> flight.getFlightNumber().equals(flightNumber));
+        return flights.removeIf(flight -> flight.getFlightNumber());
     }
 
     public Flight findFlight(String flightNumber) {
         for (Flight flight : flights) {
-            if (flight.getFlightNumber().equals(flightNumber)) {
+            if (flight.getFlightNumber()) {
                 return flight;
             }
         }

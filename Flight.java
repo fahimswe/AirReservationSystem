@@ -16,7 +16,7 @@ public class Flight {
         return flights.removeIf(flight -> flight.getFlightNumber());
     }
 
-    private boolean getFlightNumber() {
+    boolean getFlightNumber() {
         return false;
     }
 

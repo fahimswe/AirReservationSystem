@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class FlightService {
+public class Flight {
     private List<Flight> flights;
 
-    public FlightService() {
+    public void FlightService() {
         this.flights = new ArrayList<>();
     }
 
@@ -13,12 +13,16 @@ public class FlightService {
     }
 
     public boolean removeFlight(String flightNumber) {
-        return flights.removeIf(flight -> flight.getFlightNumber().equals(flightNumber));
+        return flights.removeIf(flight -> flight.getFlightNumber());
+    }
+
+    private boolean getFlightNumber() {
+        return false;
     }
 
     public Flight findFlight(String flightNumber) {
         for (Flight flight : flights) {
-            if (flight.getFlightNumber().equals(flightNumber)) {
+            if (flight.getFlightNumber()) {
                 return flight;
             }
         }

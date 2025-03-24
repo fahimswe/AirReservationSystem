@@ -12,17 +12,17 @@ public class AdminController {
     }
 
     public void handleAdmin() {
-        System.out.print("\n🔑 Admin Username: ");
+        System.out.print("\n Admin Username: ");
         String username = scanner.nextLine();
-        System.out.print("🔒 Password: ");
+        System.out.print(" Password: ");
         String password = scanner.nextLine();
 
         if (!roles.isPrivilegedUser(username, password)) {
-            System.out.println("❌ Invalid Credentials!");
+            System.out.println(" Invalid Credentials!");
             return;
         }
 
-        System.out.println("\n✅ Admin Login Successful!");
+        System.out.println("\n Admin Login Successful!");
         while (true) {
             System.out.println("\n🔹 Flight Management 🔹");
             System.out.println("1. View Flights");
@@ -57,9 +57,9 @@ public class AdminController {
         scanner.nextLine();
 
         if (flightService.addFlight(id, source, destination, seats)) {
-            System.out.println("✅ Flight Added Successfully!");
+            System.out.println(" Flight Added Successfully!");
         } else {
-            System.out.println("❌ Flight ID already exists! Try another ID.");
+            System.out.println(" Flight ID already exists! Try another ID.");
         }
     }
 }

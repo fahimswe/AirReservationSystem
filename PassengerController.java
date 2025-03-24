@@ -16,36 +16,36 @@ public class PassengerController {
     }
 
     public void registerPassenger() {
-        System.out.print("\n📩 Enter Email: ");
+        System.out.print("\n Enter Email: ");
         String email = scanner.nextLine();
-        System.out.print("🔒 Enter Password: ");
+        System.out.print(" Enter Password: ");
         String password = scanner.nextLine();
-        System.out.print("👤 Enter Name: ");
+        System.out.print(" Enter Name: ");
         String name = scanner.nextLine();
 
         if (customerService.isEmailRegistered(email)) {
-            System.out.println("❌ Email already registered! Try logging in.");
+            System.out.println(" Email already registered! Try logging in.");
         } else {
             Customer newCustomer = new Customer(name, email, password);
             customerService.addCustomer(newCustomer);
-            System.out.println("✅ Registration Successful! Your User ID: " + newCustomer.getUserID());
+            System.out.println(" Registration Successful! Your User ID: " + newCustomer.getUserID());
         }
     }
 
     public void handlePassenger() {
-        System.out.print("\n📩 Enter Email: ");
+        System.out.print("\n Enter Email: ");
         String email = scanner.nextLine();
-        System.out.print("🔒 Enter Password: ");
+        System.out.print(" Enter Password: ");
         String password = scanner.nextLine();
 
         Customer customer = customerService.findCustomerByEmailAndPassword(email, password);
 
         if (customer == null) {
-            System.out.println("❌ Invalid Email or Password!");
+            System.out.println(" Invalid Email or Password!");
             return;
         }
 
-        System.out.println("\n✅ Login Successful!");
+        System.out.println("\n Login Successful!");
         while (true) {
             System.out.println("\n🔹 Passenger Dashboard 🔹");
             System.out.println("1. View Available Flights");
@@ -80,9 +80,9 @@ public class PassengerController {
         scanner.nextLine();
 
         if (flightService.bookFlight(customer, flightId, seats)) {
-            System.out.println("✅ Booking Successful!");
+            System.out.println(" Booking Successful!");
         } else {
-            System.out.println("❌ Booking Failed! Check seat availability.");
+            System.out.println(" Booking Failed! Check seat availability.");
         }
     }
 
@@ -91,9 +91,9 @@ public class PassengerController {
         String flightId = scanner.nextLine();
 
         if (flightService.cancelReservation(customer, flightId)) {
-            System.out.println("✅ Reservation Canceled Successfully!");
+            System.out.println(" Reservation Canceled Successfully!");
         } else {
-            System.out.println("❌ No Reservation Found!");
+            System.out.println(" No Reservation Found!");
         }
     }
 }

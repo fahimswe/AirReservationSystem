@@ -55,4 +55,8 @@ public class FlightReservationService {
 
     public void displayAvailableFlights() {
     }
+
+    public boolean addFlight(String id, String source, String destination, int seats) {
+        return false;
+    }
 }

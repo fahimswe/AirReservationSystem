@@ -22,4 +22,8 @@ public class CustomerService {
 
     public void addCustomer(Customer newCustomer) {
     }
+
+    public boolean isEmailRegistered(String email) {
+        return false;
+    }
 }

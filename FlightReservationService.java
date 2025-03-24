@@ -49,4 +49,7 @@ public class FlightReservationService {
                     ", Seats: " + reservation.getNumberOfSeats());
         }
     }
+
+    public void displayAvailableFlights() {
+    }
 }

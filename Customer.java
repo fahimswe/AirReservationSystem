@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Customer {
-    private final String userID;
+    private String userID = "";
     private String email;
     private String name;
     private String phone;
@@ -20,6 +20,9 @@ public class Customer {
         this.address = address;
         this.age = age;
         this.reservations = new ArrayList<>();
+    }
+
+    public Customer(String name, String email, String password) {
     }
 
     public String getUserID() { return userID; }

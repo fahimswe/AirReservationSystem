@@ -4,6 +4,9 @@ import java.util.List;
 public class Flight {
     private List<Flight> flights;
 
+    public Flight(String f101, String newYork, String london, int i) {
+    }
+
     public void FlightService() {
         this.flights = new ArrayList<>();
     }

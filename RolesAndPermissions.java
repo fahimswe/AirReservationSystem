@@ -15,4 +15,8 @@ public class RolesAndPermissions {
         Customer customer = customerService.findCustomerByEmailAndPassword(email, password);
         return (customer != null) ? "1-" + customer.getUserID() : "0";
     }
+
+    public boolean isPrivilegedUser(String username, String password) {
+        return false;
+    }
 }

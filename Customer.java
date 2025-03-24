@@ -42,4 +42,12 @@ public class Customer {
     public void cancelReservation(FlightReservation reservation) {
         reservations.remove(reservation);
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

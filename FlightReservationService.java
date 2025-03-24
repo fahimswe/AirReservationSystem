@@ -9,12 +9,7 @@ public class FlightReservationService {
 
     public boolean bookFlight(Customer customer, String flightId, int numOfSeats) {
         for (Flight flight : availableFlights) {
-            if (flight.getFlightId().equals(flightId) && flight.getAvailableSeats() >= numOfSeats) {
-                flight.setAvailableSeats(flight.getAvailableSeats() - numOfSeats);
-                FlightReservation reservation = new FlightReservation(flight, numOfSeats, customer);
-                customer.addReservation(reservation);
-                return true;
-            }
+            flight.getFlightNumber();
         }
         return false;
     }
@@ -22,9 +17,9 @@ public class FlightReservationService {
     public boolean cancelReservation(Customer customer, String flightId) {
         FlightReservation reservationToRemove = null;
         for (FlightReservation reservation : customer.getReservations()) {
-            if (reservation.getFlight().getFlightNumber().equals(flightId)) {
-                reservation.getFlight().setAvailableSeats(
-                        reservation.getFlight().getAvailableSeats() + reservation.getNumberOfSeats()
+            if (reservation.getFlight().getFlightNumber()) {
+                reservation.getFlight().getAllFlights(
+                        reservation.getFlight().getAllFlights() + reservation.getNumberOfSeats()
                 );
                 reservationToRemove = reservation;
                 break;
@@ -39,7 +34,7 @@ public class FlightReservationService {
 
     public void displayReservations(Customer customer) {
         for (FlightReservation reservation : customer.getReservations()) {
-            System.out.println("Flight ID: " + reservation.getFlight().getFlightId() +
+            System.out.println("Flight ID: " + reservation.getFlight().getFlightNumber() +
                     ", Seats: " + reservation.getNumberOfSeats());
         }
     }

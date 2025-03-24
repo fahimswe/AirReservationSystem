@@ -22,7 +22,7 @@ public class FlightReservationService {
     public boolean cancelReservation(Customer customer, String flightId) {
         FlightReservation reservationToRemove = null;
         for (FlightReservation reservation : customer.getReservations()) {
-            if (reservation.getFlight().getFlightId().equals(flightId)) {
+            if (reservation.getFlight().getFlightNumber().equals(flightId)) {
                 reservation.getFlight().setAvailableSeats(
                         reservation.getFlight().getAvailableSeats() + reservation.getNumberOfSeats()
                 );

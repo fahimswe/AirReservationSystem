@@ -32,4 +32,11 @@ public class Flight {
     public List<Flight> getAllFlights() {
         return flights;
     }
+
+    public int getAvailableSeats() {
+        return 0;
+    }
+
+    public void setAvailableSeats(int i) {
+    }
 }

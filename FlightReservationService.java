@@ -14,10 +14,12 @@ public class FlightReservationService {
                 flight.setAvailableSeats(flight.getAvailableSeats() - numOfSeats);
                 FlightReservation reservation = new FlightReservation(flight, numOfSeats, customer);
                 customer.addReservation(reservation);
+                System.out.println("✅ Booking Successful!");
                 return true;
             }
         }
-        return false; // No available seats or flight not found
+        System.out.println("❌ Booking Failed! Not enough seats available.");
+        return false;
     }
 
     // ✅ Fixed: Proper seat update logic when canceling
@@ -26,7 +28,6 @@ public class FlightReservationService {
 
         for (FlightReservation reservation : customer.getReservations()) {
             if (reservation.getFlight().getFlightNumber()) {
-                // Return seats to flight
                 reservation.getFlight().setAvailableSeats(
                         reservation.getFlight().getAvailableSeats() + reservation.getNumberOfSeats()
                 );
@@ -37,8 +38,10 @@ public class FlightReservationService {
 
         if (reservationToRemove != null) {
             customer.getReservations().remove(reservationToRemove);
+            System.out.println("✅ Reservation Canceled Successfully!");
             return true;
         }
+        System.out.println("❌ No Reservation Found!");
         return false;
     }
 

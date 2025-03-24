@@ -2,30 +2,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FlightService {
-    private List<Flight> flights;
+    private List<Flight> flights = new ArrayList<>();
 
-    public FlightService() {
-        this.flights = new ArrayList<>();
-    }
-
-    public void addFlight(Flight flight) {
-        flights.add(flight);
-    }
-
-    public boolean removeFlight(String flightNumber) {
-        return flights.removeIf(flight -> flight.getFlightNumber());
-    }
-
-    public Flight findFlight(String flightNumber) {
-        for (Flight flight : flights) {
-            if (flight.getFlightNumber()) {
-                return flight;
-            }
-        }
-        return null;
-    }
-
-    public List<Flight> getAllFlights() {
+    public List<Flight> getFlights() {
         return flights;
+    }
+
+    public void addFlight(String flightId, String source, String destination, int seats) {
+        flights.add(new Flight(flightId, source, destination, seats));
+        System.out.println("✅ Flight Added Successfully!");
+    }
+
+    public void displayFlights() {
+        for (Flight flight : flights) {
+            System.out.println(flight);
+        }
     }
 }

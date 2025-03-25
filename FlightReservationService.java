@@ -41,11 +41,11 @@ public class FlightReservationService {
             System.out.println("✅ Reservation Canceled Successfully!");
             return true;
         }
-        System.out.println("❌ No Reservation Found!");
+        System.out.println(" No Reservation Found!");
         return false;
     }
 
-    // ✅ Fixed: Display proper reservation details
+    //  Fixed: Display proper reservation details
     public void displayReservations(Customer customer) {
         for (FlightReservation reservation : customer.getReservations()) {
             System.out.println("Flight ID: " + reservation.getFlight().getFlightNumber() +
